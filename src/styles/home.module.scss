@@ -11,19 +11,75 @@
 
     header {
         width: 100%;
-        // background: green;
-    }
+        padding: 32px;
+        background: var(--black);
+    
 
     .header__content {
         width: 100%;
         max-width: 1366px;
 
         margin: 0 auto;
-    }
+
+        display: flex;
+        align-items: center;
+        column-gap: 32px;
+
+        color: var(--white);
+
+        > span {
+            width: 2px;
+            height: 40px;
+            background: var(--white);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            column-gap: 40px;
+
+            margin-left: 20px;
+
+            a {
+                font-size: 14px;
+                font-weight: bold;
+                letter-spacing: 0.3px;
+            }
+        }
+
+        > div {
+            display: flex;
+            align-items: center;
+            column-gap: 12px;
+
+            margin-left: auto;
+
+            picture {
+                position: relative;
+                width: 48px;
+                height: 48px;
+                border-radius: 48px;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                }
+            }
+
+            strong {
+                font-size: 12px;
+            }
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+      }
+     }
 
     main {
         flex: 1;
-        // background: pink;
+       // background: pink;
 
         width: 100%;
         max-width: 1366px;
