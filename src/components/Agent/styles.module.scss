@@ -3,13 +3,46 @@
     flex-direction: column;
     justify-content: space-between;
 
-    background: pink;
+   // background: pink;
     width: 300px;
     height: 600px;
 
-> div {
-    font-family: 'Druk';
+    position: relative;
+
+    filter: grayscale(1);
+
+    &:hover {
+        filter: grayscale(0);
+
+        .text {
+            opacity: 1;
+        }
+
+        .background {
+            background: var(--black);
+            span {
+                background-size: 340%;
+            }
+            
+        }
+    }
+
+    .text, .abilities {
+        z-index: 2;
+    }
 }
+
+.text {
+    font-family: 'Druk';
+
+    margin-top: 40px;
+    margin-left: -10px;
+    align-self: flex-start;
+    writing-mode: vertical-rl;
+
+    opacity: 0.5;
+    transition: all 0.4s;
+
 
 p {
     color: var(--red);
@@ -26,14 +59,44 @@ strong {
     color: transparent;
     -webkit-text-stroke: 2px rgba(255,255,255,0.8);
 }
+}
 
 
-ul {
+.abilities {
     list-style: none;
 
     display: flex;
     align-items: center;
     column-gap: 20px;
     align-self: flex-end;
+
+    padding: 16px;
+    border-radius: 2px;
+    border: 1px solid var(--white);
+    background: var(--black);
 }
+
+.background {
+    position: absolute;
+    inset: 0;
+    background: var(--black-opacity);
+    border-radius: 10px;
+    overflow: hidden;
+
+    width: 90%;
+    height: 90%;
+    margin: auto;
+
+    transition: all 0.4s;
+
+    span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s;
+
+        background-repeat: no-repeat;
+        background-size: 290%;
+        background-position: 45% 35%;
+    }
 }
